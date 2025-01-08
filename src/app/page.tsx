@@ -8,6 +8,7 @@ export default async function Home() {
       <main>
         <Navbar />
         <Hero />
+        <p>test</p>
       </main>
     </HydrateClient>
   );
