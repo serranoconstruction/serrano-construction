@@ -1,50 +1,58 @@
-import { type UseFormRegister, type FieldErrors } from "react-hook-form";
+import React, { forwardRef } from "react";
+import { cva, type VariantProps } from "class-variance-authority";
+import { cn } from "../utils";
 
-interface FormValues {
-  name: string;
-  phone: string;
-  email: string;
-  details: string;
-}
+const inputVariants = cva(
+  "w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-300",
+  {
+    variants: {
+      state: {
+        default: "border-gray-300",
+        error: "border-red-500",
+      },
+    },
+    defaultVariants: {
+      state: "default",
+    },
+  },
+);
 
-interface InputProps {
+interface InputProps
+  extends React.InputHTMLAttributes<HTMLInputElement | HTMLTextAreaElement>,
+    VariantProps<typeof inputVariants> {
   label: string;
-  name: keyof FormValues;
-  type?: string;
-  register: UseFormRegister<FormValues>;
-  errors: FieldErrors<FormValues>;
   isTextArea?: boolean;
+  error?: string;
 }
 
-export function FormInput({
-  label,
-  name,
-  type = "text",
-  register,
-  errors,
-  isTextArea = false,
-}: InputProps) {
-  const inputProps = {
-    ...register(name),
-    id: name,
-    type,
-    className:
-      "w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300",
-  };
+const FormInput = forwardRef<
+  HTMLInputElement | HTMLTextAreaElement,
+  InputProps
+>(({ label, isTextArea = false, error, state, className, ...props }, ref) => {
+  const inputClassName = cn(
+    inputVariants({
+      state: error ? "error" : "default",
+      className,
+    }),
+  );
 
   return (
     <div className="space-y-1.5">
-      <label htmlFor={name} className="block text-black-400">
+      <label htmlFor={props.id || props.name} className="block text-black-400">
         {label}
       </label>
       {isTextArea ? (
-        <textarea {...inputProps} rows={4} />
+        // @ts-expect-error - ref
+        <textarea ref={ref} className={inputClassName} {...props} rows={4} />
       ) : (
-        <input {...inputProps} />
+        // @ts-expect-error - ref
+        <input ref={ref} className={inputClassName} {...props} />
       )}
-      {errors[name] && (
-        <p className="text-sm text-red-500">{errors[name]?.message}</p>
-      )}
+      {error && <p className="text-sm text-red-500">{error}</p>}
     </div>
   );
-}
+});
+
+FormInput.displayName = "FormInput";
+
+export { FormInput, inputVariants };

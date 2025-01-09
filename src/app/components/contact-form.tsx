@@ -7,7 +7,10 @@ import { FormInput } from "../ui/form-inputs";
 
 const formSchema = z.object({
   name: z.string().min(1, "Name is required"),
-  phone: z.string().min(1, "Phone is required"),
+  phone: z
+    .string()
+    .regex(/^\d+$/, "Phone number must contain only numbers")
+    .min(10, "Phone number must be at least 10 digits"),
   email: z.string().email("Invalid email address"),
   details: z.string().min(1, "Details are required"),
 });
@@ -32,33 +35,33 @@ export function ContactForm() {
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
         <FormInput
           label="Name"
-          name="name"
-          register={register}
-          errors={errors}
+          placeholder="Enter your full name"
+          error={errors.name?.message}
+          {...register("name")}
         />
 
         <FormInput
           label="Phone"
-          name="phone"
           type="tel"
-          register={register}
-          errors={errors}
+          placeholder="Enter your phone number"
+          error={errors.phone?.message}
+          {...register("phone")}
         />
 
         <FormInput
           label="Email"
-          name="email"
           type="email"
-          register={register}
-          errors={errors}
+          placeholder="Enter your email address"
+          error={errors.email?.message}
+          {...register("email")}
         />
 
         <FormInput
           label="Details"
-          name="details"
-          register={register}
-          errors={errors}
           isTextArea
+          placeholder="Provide additional details about your inquiry"
+          error={errors.details?.message}
+          {...register("details")}
         />
 
         <button
