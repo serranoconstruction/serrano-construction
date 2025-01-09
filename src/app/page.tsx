@@ -8,14 +8,11 @@ import { ContactSection } from "./components/contact-section";
 export default async function Home() {
   return (
     <HydrateClient>
-      <main>
-        <Navbar />
-        <div className="mb-[500px] space-y-8">
-          <Hero />
-          <AboutSection />
-          <ServicesSection />
-          <ContactSection />
-        </div>
+      <main className="mb-[500px] space-y-8">
+        <Hero />
+        <AboutSection />
+        <ServicesSection />
+        <ContactSection />
       </main>
     </HydrateClient>
   );

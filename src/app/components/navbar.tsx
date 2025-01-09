@@ -34,27 +34,30 @@ const MobileMenu = () => {
           </button>
         </li>
         <li className="p-4">
-          <Link href="#home" className="text-black-400 hover:text-blue-400">
+          <Link href="/" className="text-black-400 hover:text-blue-400">
             Home
           </Link>
         </li>
         <li className="p-4">
-          <Link href="#about" className="text-black-400 hover:text-blue-400">
+          <Link href="/#about" className="text-black-400 hover:text-blue-400">
             About Us
           </Link>
         </li>
         <li className="p-4">
-          <Link href="#services" className="text-black-400 hover:text-blue-400">
+          <Link
+            href="/#services"
+            className="text-black-400 hover:text-blue-400"
+          >
             Services
           </Link>
         </li>
         <li className="p-4">
-          <Link href="#contact" className="text-black-400 hover:text-blue-400">
+          <Link href="/#contact" className="text-black-400 hover:text-blue-400">
             Contact
           </Link>
         </li>
         <li className="p-4">
-          <Link href="#gallery" className="text-black-400 hover:text-blue-400">
+          <Link href="/gallery" className="text-black-400 hover:text-blue-400">
             Gallery
           </Link>
         </li>
@@ -67,27 +70,27 @@ const DesktopMenu = () => {
   return (
     <ul className="flex flex-row justify-end gap-6 bg-transparent">
       <li>
-        <Link href="#home" className="text-black-400 hover:text-blue-400">
+        <Link href="/" className="text-black-400 hover:text-blue-400">
           Home
         </Link>
       </li>
       <li>
-        <Link href="#about" className="text-black-400 hover:text-blue-400">
+        <Link href="/#about" className="text-black-400 hover:text-blue-400">
           About Us
         </Link>
       </li>
       <li>
-        <Link href="#services" className="text-black-400 hover:text-blue-400">
+        <Link href="/#services" className="text-black-400 hover:text-blue-400">
           Services
         </Link>
       </li>
       <li>
-        <Link href="#contact" className="text-black-400 hover:text-blue-400">
+        <Link href="/#contact" className="text-black-400 hover:text-blue-400">
           Contact
         </Link>
       </li>
       <li>
-        <Link href="#gallery" className="text-black-400 hover:text-blue-400">
+        <Link href="/gallery" className="text-black-400 hover:text-blue-400">
           Gallery
         </Link>
       </li>
