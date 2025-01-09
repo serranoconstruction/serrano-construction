@@ -1,4 +1,5 @@
 import { CheckIcon } from "lucide-react";
+import { SectionHeader } from "../ui/section-header";
 
 type ServiceItemProps = { title: string; description: string };
 
@@ -10,7 +11,7 @@ const ServiceItem = ({ title, description }: ServiceItemProps) => {
       </div>
       <div>
         <h3 className="text-2xl font-medium">{title}</h3>
-        <p>{description}</p>
+        <p className="text-gray-600">{description}</p>
       </div>
     </div>
   );
@@ -45,10 +46,8 @@ const services = [
 
 export const ServicesSection = () => {
   return (
-    <section id="about" className="gap-8 space-y-8 px-8">
-      <h2 className="text-3xl font-bold text-blue-400 lg:text-5xl">
-        WHAT WE DO
-      </h2>
+    <section id="services" className="gap-8 space-y-8 px-8">
+      <SectionHeader> WHAT WE DO</SectionHeader>
 
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         {services.map((service, index) => (
