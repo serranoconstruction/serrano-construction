@@ -24,7 +24,12 @@ export default withUt({
         },
         blue: {
           "400": "#092C89",
+          "300": "#B3C7E6",
         },
+      },
+      boxShadow: {
+        "equal-top-bottom":
+          "0 0px 8px rgba(0, 0, 0, 0.1), 0 0px 8px rgba(0, 0, 0, 0.1)",
       },
     },
   },

@@ -97,7 +97,7 @@ const DesktopMenu = () => {
 
 export const Navbar = () => {
   return (
-    <nav className="bg-white flex items-center justify-between pr-5 shadow-md">
+    <nav className="bg-white flex items-center justify-between pl-4 pr-8 shadow-md">
       <Link href="/">
         <img src={Logo.src} alt="Serrano Construction Logo" className="w-28" />
       </Link>

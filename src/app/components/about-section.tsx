@@ -2,7 +2,7 @@ import AboutImage from "../images/about.webp";
 
 export const AboutSection = () => {
   return (
-    <section id="about" className="grid grid-cols-1 gap-8 p-8 lg:grid-cols-3">
+    <section id="about" className="grid grid-cols-1 gap-8 px-8 lg:grid-cols-3">
       <div className="space-y-4 lg:order-2">
         <div>
           <h2 className="text-3xl font-bold text-blue-400 lg:text-5xl">
