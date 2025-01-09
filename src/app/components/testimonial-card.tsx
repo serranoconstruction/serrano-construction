@@ -18,7 +18,7 @@ export function TestimonialCard({
   onNext,
 }: TestimonialProps) {
   return (
-    <div className="shadow-equal-top-bottom relative h-[300px] max-w-xl rounded-md bg-white-400 px-16 py-8">
+    <div className="shadow-equal-top-bottom relative h-[300px] rounded-md bg-white-400 px-16 py-8">
       <h3 className="mb-2 text-xl font-semibold">{name}</h3>
 
       <div className="mb-4 flex">
