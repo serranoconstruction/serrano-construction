@@ -1,6 +1,7 @@
 import React, { forwardRef } from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "../utils";
+import Link from "next/link";
 
 const buttonVariants = cva(
   "rounded-md text-sm font-medium transition-colors inline-flex items-center justify-center",
@@ -33,13 +34,13 @@ interface ButtonProps
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant, size, isLoading, href, children, ...props }, ref) => {
-    const Comp = href ? "a" : "button";
+    const Comp = href ? Link : "button";
 
     return (
-      // @ts-expect-error - not worth fixing
       <Comp
         className={cn(buttonVariants({ variant, size, className }))}
         ref={ref as any}
+        // @ts-expect-error - not worth fixing
         href={href}
         disabled={isLoading || props.disabled}
         {...props}
