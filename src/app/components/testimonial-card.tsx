@@ -5,7 +5,7 @@ import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 interface TestimonialProps {
   name: string;
   rating: number;
-  content: string;
+  description: string;
   onPrevious?: () => void;
   onNext?: () => void;
 }
@@ -13,12 +13,12 @@ interface TestimonialProps {
 export function TestimonialCard({
   name,
   rating = 5,
-  content,
+  description,
   onPrevious,
   onNext,
 }: TestimonialProps) {
   return (
-    <div className="shadow-equal-top-bottom relative h-[300px] rounded-md bg-white-400 px-16 py-8">
+    <div className="relative h-[300px] rounded-md bg-white-400 px-16 py-8 shadow-equal-top-bottom">
       <h3 className="mb-2 text-xl font-semibold">{name}</h3>
 
       <div className="mb-4 flex">
@@ -35,12 +35,12 @@ export function TestimonialCard({
       </div>
 
       <div className="mb-6 h-[170px] overflow-y-auto text-gray-600">
-        <p>{content}</p>
+        <p>{description}</p>
       </div>
 
       <div className="absolute left-0 right-0 top-1/2 flex w-full -translate-y-1/2 justify-between px-2">
         <button
-          className="shadow-equal-top-bottom flex h-10 w-10 items-center justify-center rounded-full bg-white-400 hover:bg-gray-50"
+          className="flex h-10 w-10 items-center justify-center rounded-full bg-white-400 shadow-equal-top-bottom hover:bg-gray-50"
           onClick={onPrevious}
         >
           <span className="sr-only">Previous testimonial</span>
@@ -48,7 +48,7 @@ export function TestimonialCard({
         </button>
 
         <button
-          className="shadow-equal-top-bottom flex h-10 w-10 items-center justify-center rounded-full bg-white-400 hover:bg-gray-50"
+          className="flex h-10 w-10 items-center justify-center rounded-full bg-white-400 shadow-equal-top-bottom hover:bg-gray-50"
           onClick={onNext}
         >
           <span className="sr-only">Next testimonial</span>

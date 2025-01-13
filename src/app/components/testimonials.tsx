@@ -1,60 +1,49 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { TestimonialCard } from "./testimonial-card";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-
-const testimonials: Testimonial[] = [
-  {
-    id: "1",
-    name: "Alice Johnson",
-    rating: 5,
-    content:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  },
-  {
-    id: "2",
-    name: "Bob Smith",
-    rating: 4,
-    content:
-      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-  },
-  {
-    id: "3",
-    name: "Carol Williams",
-    rating: 5,
-    content:
-      "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-  },
-];
-
-interface Testimonial {
-  id: string;
-  name: string;
-  rating: number;
-  content: string;
-}
+import { api } from "../../trpc/react";
 
 export default function Testimonials() {
+  const {
+    data: testimonials,
+    isLoading,
+    isError,
+    error,
+  } = api.testimonial.getAll.useQuery();
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  // Reset currentIndex to 0 when testimonials data changes
+  useEffect(() => {
+    setCurrentIndex(0);
+  }, [testimonials]);
+
   const handlePrevious = () => {
+    if (!testimonials) return;
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1,
     );
   };
 
   const handleNext = () => {
+    if (!testimonials) return;
     setCurrentIndex((prevIndex) =>
       prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1,
     );
   };
 
+  if (isLoading) return <p>Loading testimonials...</p>;
+  if (isError) return <p>Error loading testimonials: {error?.message}</p>;
+  if (!testimonials || testimonials.length === 0)
+    return <p>No testimonials available.</p>;
+
+  const currentTestimonial = testimonials[currentIndex];
+
   return (
     <div className="relative">
-      {testimonials[currentIndex] && (
+      {currentTestimonial && (
         <TestimonialCard
-          {...testimonials[currentIndex]}
+          {...currentTestimonial}
           onPrevious={handlePrevious}
           onNext={handleNext}
         />

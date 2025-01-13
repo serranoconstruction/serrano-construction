@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { redirect } from "next/navigation";
 import { Button } from "../ui/button";
 import { AdminGallery } from "./admin-gallery";
+import { AdminTestimonials } from "./admin-testimonials";
 
 export const AdminContent = () => {
   const { data: session, status } = useSession();
@@ -30,6 +31,7 @@ export const AdminContent = () => {
       </Button>
       <hr />
       <AdminGallery />
+      <AdminTestimonials />
     </div>
   );
 };
