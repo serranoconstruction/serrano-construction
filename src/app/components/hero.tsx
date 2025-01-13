@@ -1,6 +1,4 @@
-import HeroImage from "../images/hero.jpg";
 import { Button } from "../ui/button";
-import Link from "next/link";
 
 export const Hero = () => {
   return (
@@ -8,7 +6,7 @@ export const Hero = () => {
       className="relative h-screen bg-cover bg-center"
       style={{
         height: "calc(100vh - 7rem)",
-        backgroundImage: `url(${HeroImage.src})`,
+        backgroundImage: `url(https://elaecgmcja.ufs.sh/f/GxwwAzRdmujlKgd3JnSAPnyYDq2o9HgWNRvmlGXU1J0hkd45)`,
       }}
     >
       <div className="absolute inset-0 bg-black-400 bg-opacity-50"></div>

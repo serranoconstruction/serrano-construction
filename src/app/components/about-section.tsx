@@ -1,4 +1,3 @@
-import AboutImage from "../images/about.webp";
 import { SectionHeader } from "../ui/section-header";
 
 export const AboutSection = () => {
@@ -45,7 +44,8 @@ export const AboutSection = () => {
 
       <div className="lg:order-1 lg:col-span-2">
         <img
-          src={AboutImage.src}
+          src="https://elaecgmcja.ufs.sh/f/GxwwAzRdmujlGC1aNURdmujlkVfIrnT672WLiO1DhFyQp4oH"
+          alt="Before and after construction"
           className="max-h-[39.5rem] w-full object-cover"
         />
       </div>

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import Logo from "../images/logo.png";
+
 import { Menu, X } from "lucide-react";
 
 const MobileMenu = () => {
@@ -102,7 +102,11 @@ export const Navbar = () => {
   return (
     <nav className="bg-white flex items-center justify-between pl-4 pr-8 shadow-md">
       <Link href="/">
-        <img src={Logo.src} alt="Serrano Construction Logo" className="w-28" />
+        <img
+          src="https://elaecgmcja.ufs.sh/f/GxwwAzRdmujlHDGPH3pbgsf2v5N06LQP79mCYUnBuyhVTMpE"
+          alt="Serrano Construction Logo"
+          className="w-28"
+        />
       </Link>
 
       <div className="md:hidden">
