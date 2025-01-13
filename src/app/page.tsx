@@ -8,7 +8,7 @@ import { ContactSection } from "./components/contact-section";
 export default async function Home() {
   return (
     <HydrateClient>
-      <main className="mb-[500px] space-y-8">
+      <main className="space-y-8">
         <Hero />
         <AboutSection />
         <ServicesSection />

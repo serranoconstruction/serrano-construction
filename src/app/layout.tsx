@@ -25,7 +25,9 @@ export default function RootLayout({
         <TRPCReactProvider>
           <Navbar />
           {children}
-          <Footer />
+          <div className="mt-8">
+            <Footer />
+          </div>
         </TRPCReactProvider>
       </body>
     </html>
