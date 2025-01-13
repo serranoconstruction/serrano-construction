@@ -1,5 +1,4 @@
 import { HydrateClient } from "~/trpc/server";
-import { Navbar } from "./components/navbar";
 import { Hero } from "./components/hero";
 import { AboutSection } from "./components/about-section";
 import { ServicesSection } from "./components/services-section";
