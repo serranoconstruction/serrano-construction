@@ -3,6 +3,7 @@
 import { signOut, useSession } from "next-auth/react";
 import { useEffect } from "react";
 import { redirect } from "next/navigation";
+import { Button } from "../ui/button";
 
 export const AdminContent = () => {
   const { data: session, status } = useSession();
@@ -19,6 +20,13 @@ export const AdminContent = () => {
 
   return (
     <div className="min-h-screen space-y-6 p-4">
+      <Button
+        onClick={() => {
+          signOut({ redirectTo: "/" });
+        }}
+      >
+        Logout
+      </Button>
       <p>admin</p>
     </div>
   );
