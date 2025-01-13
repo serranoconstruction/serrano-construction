@@ -44,7 +44,10 @@ export const AboutSection = () => {
       </div>
 
       <div className="lg:order-1 lg:col-span-2">
-        <img src={AboutImage.src} className="w-full object-cover" />
+        <img
+          src={AboutImage.src}
+          className="max-h-[39.5rem] w-full object-cover"
+        />
       </div>
     </section>
   );
