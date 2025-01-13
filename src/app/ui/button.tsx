@@ -3,16 +3,23 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "../utils";
 
 const buttonVariants = cva(
-  "rounded-md px-6 py-2 text-sm font-medium transition-colors inline-flex items-center justify-center",
+  "rounded-md text-sm font-medium transition-colors inline-flex items-center justify-center",
   {
     variants: {
       variant: {
-        solid: "text-white-400 bg-blue-400 hover:bg-blue-400/90",
-        outline: "border-white text-white-400 border hover:bg-white/10",
+        solid: "px-6 py-2 text-white-400 bg-blue-400 hover:bg-blue-400/90",
+        outline:
+          "px-6 py-2 border border-white-400 text-white-400 hover:bg-white-400/10",
+        destructive: "px-6 py-2 text-white-400 bg-red-500 hover:bg-red-500/90",
+      },
+      size: {
+        default: "",
+        icon: "p-2",
       },
     },
     defaultVariants: {
       variant: "solid",
+      size: "default",
     },
   },
 );
@@ -21,19 +28,24 @@ interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
   href?: string;
+  isLoading?: boolean;
 }
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, href, ...props }, ref) => {
+  ({ className, variant, size, isLoading, href, children, ...props }, ref) => {
     const Comp = href ? "a" : "button";
+
     return (
       // @ts-expect-error - not worth fixing
       <Comp
-        className={cn(buttonVariants({ variant, className }))}
+        className={cn(buttonVariants({ variant, size, className }))}
         ref={ref as any}
         href={href}
+        disabled={isLoading || props.disabled}
         {...props}
-      />
+      >
+        {isLoading ? "Loading..." : children}
+      </Comp>
     );
   },
 );

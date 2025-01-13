@@ -28,6 +28,7 @@ export const AdminContent = () => {
       >
         Logout
       </Button>
+      <hr />
       <AdminGallery />
     </div>
   );
