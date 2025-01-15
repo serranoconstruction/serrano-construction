@@ -13,10 +13,7 @@ export function Footer() {
         </div>
 
         <div className="flex flex-col gap-2 md:items-end">
-          <a
-            href="mailto:serrano.construction@gmail.com"
-            className="hover:underline"
-          >
+          <a href="mailto:rod5547@gmail.com" className="hover:underline">
             rod5547@gmail.com
           </a>
           <a href="tel:9163205547" className="hover:underline">
