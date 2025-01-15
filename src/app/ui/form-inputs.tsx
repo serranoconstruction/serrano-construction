@@ -23,35 +23,52 @@ interface InputProps
   label: string;
   isTextArea?: boolean;
   error?: string;
+  required?: boolean;
 }
 
 const FormInput = forwardRef<
   HTMLInputElement | HTMLTextAreaElement,
   InputProps
->(({ label, isTextArea = false, error, state, className, ...props }, ref) => {
-  const inputClassName = cn(
-    inputVariants({
-      state: error ? "error" : "default",
+>(
+  (
+    {
+      label,
+      isTextArea = false,
+      error,
+      required = false,
+      state,
       className,
-    }),
-  );
+      ...props
+    },
+    ref,
+  ) => {
+    const inputClassName = cn(
+      inputVariants({
+        state: error ? "error" : "default",
+        className,
+      }),
+    );
 
-  return (
-    <div className="space-y-1.5">
-      <label htmlFor={props.id || props.name} className="block text-black-400">
-        {label}
-      </label>
-      {isTextArea ? (
-        // @ts-expect-error - ref
-        <textarea ref={ref} className={inputClassName} {...props} rows={4} />
-      ) : (
-        // @ts-expect-error - ref
-        <input ref={ref} className={inputClassName} {...props} />
-      )}
-      {error && <p className="text-sm text-red-500">{error}</p>}
-    </div>
-  );
-});
+    return (
+      <div className="space-y-1.5">
+        <label
+          htmlFor={props.id || props.name}
+          className="block text-black-400"
+        >
+          {label} {required && <span className="text-red-500">*</span>}
+        </label>
+        {isTextArea ? (
+          // @ts-expect-error - ref
+          <textarea ref={ref} className={inputClassName} {...props} rows={4} />
+        ) : (
+          // @ts-expect-error - ref
+          <input ref={ref} className={inputClassName} {...props} />
+        )}
+        {error && <p className="text-sm text-red-500">{error}</p>}
+      </div>
+    );
+  },
+);
 
 FormInput.displayName = "FormInput";
 
