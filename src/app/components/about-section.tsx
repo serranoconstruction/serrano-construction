@@ -12,32 +12,30 @@ export const AboutSection = () => {
         </div>
 
         <p>
-          At Serrano Construction, we approach every project, big or small, with
-          meticulous attention to detail. Our team stays ahead of the curve by
-          utilizing the latest industry techniques and high-quality materials.
-          We are committed to delivering exceptional craftsmanship and ensuring
-          each project reflects our dedication to excellence
+          At Serrano Construction, we believe in delivering top-quality
+          craftsmanship, no matter the project size. Our team stays current with
+          industry trends, materials, and techniques to ensure we’re providing
+          the best possible results. We’re committed to the highest standards of
+          quality in every project we take on.
         </p>
         <p>
-          Your home is more than just a building—it’s your sanctuary. That’s why
-          we treat every project with the utmost care and respect. We understand
-          that construction can feel overwhelming, but our team is here to make
-          the process seamless and stress-free. By taking the time to understand
-          your vision and priorities, we collaborate with you to create a plan
-          that balances your needs and budget. Transparency is at the heart of
-          what we do, so we keep you informed every step of the way.
+          We know construction can be a daunting experience, but we’re here to
+          make it easy for you. Our approach is straightforward—we take the time
+          to understand your vision and priorities so we can create a plan that
+          works within your budget. We focus on clear communication, keeping you
+          informed at every stage of the process.
         </p>
 
         <p>
-          Exceptional customer service is the foundation of Serrano
-          Construction. We take pride in offering unparalleled workmanship while
-          building lasting relationships with our clients.
+          At Serrano Construction, customer satisfaction is our priority. We’re
+          proud of the lasting relationships we build with our clients and the
+          exceptional work we deliver. We’re excited to bring our experience and
+          passion to your next project and help turn your ideas into reality.
         </p>
 
         <p>
-          Thank you for considering Serrano Construction for your upcoming
-          project. We’re excited to bring our expertise and passion to your home
-          and make your vision a reality.
+          Thank you for choosing Serrano Construction. We look forward to
+          working with you.
         </p>
         <p>Rod Serrano - Owner</p>
       </div>
