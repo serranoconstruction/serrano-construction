@@ -10,7 +10,7 @@ import { Navbar } from "./components/navbar";
 export const metadata: Metadata = {
   title: "Serrano Construction",
   description:
-    "Serrano Construction delivers top-tier craftsmanship and exceptional customer service on every project, big or small. Our experienced team ensures that your vision becomes a reality with quality materials, innovative techniques, and clear communication at every step.",
+    "Serrano Construction, based in Elk Grove, California, is dedicated to delivering top-tier craftsmanship and exceptional customer service for every construction project, big or small. Our experienced team in Elk Grove ensures your vision becomes a reality by using quality materials, innovative construction techniques, and maintaining clear communication at every step. Whether you're renovating, remodeling, or building a new home, trust Serrano Construction for reliable, professional service in Elk Grove and surrounding areas.",
   icons: [{ rel: "icon", url: "/favicon.ico" }],
   manifest: "./site.webmanifest",
 };
