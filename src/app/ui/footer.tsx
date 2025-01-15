@@ -8,7 +8,7 @@ export function Footer() {
         <div>
           <h2 className="mb-1 text-xl font-semibold">Serrano Construction</h2>
           <p className="text-sm text-gray-300">
-            General Contractor License #55555
+            General Contractor License #745844
           </p>
         </div>
 
@@ -17,9 +17,11 @@ export function Footer() {
             href="mailto:serrano.construction@gmail.com"
             className="hover:underline"
           >
-            serrano.construction@gmail.com
+            rod5547@gmail.com
           </a>
-          <span>(916) 320-5547</span>
+          <a href="tel:9163205547" className="hover:underline">
+            <span>(916) 320-5547</span>
+          </a>
 
           <a
             href="https://www.instagram.com/serrano_construction_norcal/"
